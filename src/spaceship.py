@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Spaceship:
     def __init__(self, name, initial_position, initial_velocity):
         """
@@ -26,7 +27,7 @@ class Spaceship:
 
     def update_forward(self, target_position):
         """
-        Adjust forward direction towards the given 'target_position'.
+        Adjust forward direction towards the given target_position.
         """
         direction = target_position - self.position
         dist = np.linalg.norm(direction)
@@ -35,10 +36,10 @@ class Spaceship:
 
     def is_in_firing_range(self, target, alpha_deg, beta):
         """
-        Checks if 'target' is within firing angle 'alpha_deg' and distance 'beta'.
+        Checks if target is within firing angle alpha_deg and distance beta.
         """
         if target.destroyed:
-            return False  
+            return False
 
         # Distance check
         diff = target.position - self.position
@@ -49,7 +50,7 @@ class Spaceship:
         # Angle check
         forward_len = np.linalg.norm(self.forward)
         if forward_len == 0 or dist == 0:
-            # If no forward vector or the distance is effectively zero, lets say its in range
+            # If no forward vector or the distance is effectively zero, then lets just say its in range
             return True
 
         dot_val = np.dot(self.forward, diff)

@@ -1,10 +1,12 @@
-import sys
 import random
+import sys
+
 import numpy as np
 
-from src.spaceship import Spaceship
 from src.engine import run_simulation
 from src.graphics import print_ascii_map
+from src.spaceship import Spaceship
+
 
 def main():
     random_mode = any(arg in ("-random", "--random") for arg in sys.argv[1:])
@@ -55,16 +57,11 @@ def main():
         print_ascii_map(shipA, shipB, grid_size=grid_size)
 
         winner, sim_step = run_simulation(
-            shipA,
-            shipB,
-            alpha_deg,
-            beta,
-            time_steps=1,   
-            grid_size=grid_size
+            shipA, shipB, alpha_deg, beta, time_steps=1, grid_size=grid_size
         )
 
         if winner != "None":
-            final_step = sim_step + step  
+            final_step = sim_step + step
             break
 
     if winner == "A":
@@ -75,6 +72,7 @@ def main():
         print(f"Both ships destroyed each other at step {final_step}.")
     else:
         print("Both ships survived.")
+
 
 if __name__ == "__main__":
     main()

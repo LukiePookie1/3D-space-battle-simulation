@@ -3,7 +3,7 @@ A simple Python simulation where two ships move in 3D space and try to destroy e
 
 ## Installation
 ```bash
-pip install numpy
+pip install -r requirements.txt
 ```
 ## Run
 ```bash

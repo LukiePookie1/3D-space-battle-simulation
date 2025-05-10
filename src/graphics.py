@@ -1,10 +1,10 @@
 def print_ascii_map(shipA, shipB, grid_size=25):
     """
-    Prints a 2D (x-y) ASCII map of size 'grid_size'.
+    Prints a 2D (x-y) ASCII map of size grid_size.
     The top-left corner is (0, grid_size-1).
     """
-    xA, yA = int(round(shipA.position[0])), int(round(shipA.position[1]))
-    xB, yB = int(round(shipB.position[0])), int(round(shipB.position[1]))
+    xA, yA = round(shipA.position[0]), round(shipA.position[1])
+    xB, yB = round(shipB.position[0]), round(shipB.position[1])
 
     grid = [["." for _ in range(grid_size)] for _ in range(grid_size)]
 
@@ -19,4 +19,4 @@ def print_ascii_map(shipA, shipB, grid_size=25):
     # Print from top row to bottom row
     for row in reversed(grid):
         print("".join(row))
-    print()  
+    print()

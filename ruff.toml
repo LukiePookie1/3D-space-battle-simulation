@@ -1,0 +1,23 @@
+line-length = 88
+target-version = "py310"
+
+[lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "UP",
+    "B",
+    "C4",
+    "T20",
+    "RUF",
+]
+ignore = [
+    "E501",
+    "B008",
+    "T201",
+]
+
+[lint.isort]
+combine-as-imports = true
+known-first-party = ["3D-spaceship-battle-simulation"]
